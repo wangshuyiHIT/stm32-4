@@ -3,9 +3,9 @@
 <title>Static Call Graph - [CtrBoard\CtrBoard.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image CtrBoard\CtrBoard.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Feb 21 09:49:00 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Wed Mar 19 07:04:56 2025
 <BR><P>
-<H3>Maximum Stack Usage =        376 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        384 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; MX_USB_DEVICE_Init &rArr; USBD_Init &rArr; USBD_LL_Init &rArr; HAL_PCD_Init &rArr; HAL_PCD_MspInit &rArr; HAL_RCCEx_PeriphCLKConfig &rArr; RCCEx_PLL3_Config
 <P>
@@ -315,7 +315,7 @@ Global Symbols
 <P><STRONG><a name="[1bd]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[b7]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 376 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 384 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; MX_USB_DEVICE_Init &rArr; USBD_Init &rArr; USBD_LL_Init &rArr; HAL_PCD_Init &rArr; HAL_PCD_MspInit &rArr; HAL_RCCEx_PeriphCLKConfig &rArr; RCCEx_PLL3_Config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -2322,7 +2322,6 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receive_data_control
 </UL>
 
 <P><STRONG><a name="[18c]"></a>delay_us</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, delay.o(i.delay_us))
@@ -2330,7 +2329,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;receive_data_control
 </UL>
 
 <P><STRONG><a name="[149]"></a>dm4310_ctrl_send</STRONG> (Thumb, 108 bytes, Stack size 0 bytes, dm4310_drv.o(i.dm4310_ctrl_send))
@@ -2361,7 +2359,7 @@ Global Symbols
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fdcan1_rx_callback
 </UL>
 
-<P><STRONG><a name="[195]"></a>dm4310_motor_init</STRONG> (Thumb, 346 bytes, Stack size 16 bytes, dm4310_ctrl.o(i.dm4310_motor_init))
+<P><STRONG><a name="[195]"></a>dm4310_motor_init</STRONG> (Thumb, 354 bytes, Stack size 16 bytes, dm4310_ctrl.o(i.dm4310_motor_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = dm4310_motor_init &rArr; __aeabi_memclr4
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
@@ -2420,8 +2418,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mit_ctrl
 </UL>
 
-<P><STRONG><a name="[b8]"></a>main</STRONG> (Thumb, 684 bytes, Stack size 8 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 376<LI>Call Chain = main &rArr; MX_USB_DEVICE_Init &rArr; USBD_Init &rArr; USBD_LL_Init &rArr; HAL_PCD_Init &rArr; HAL_PCD_MspInit &rArr; HAL_RCCEx_PeriphCLKConfig &rArr; RCCEx_PLL3_Config
+<P><STRONG><a name="[b8]"></a>main</STRONG> (Thumb, 684 bytes, Stack size 16 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = main &rArr; MX_USB_DEVICE_Init &rArr; USBD_Init &rArr; USBD_LL_Init &rArr; HAL_PCD_Init &rArr; HAL_PCD_MspInit &rArr; HAL_RCCEx_PeriphCLKConfig &rArr; RCCEx_PLL3_Config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_data
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm4310_motor_init
@@ -2470,12 +2468,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dm4310_ctrl_send
 </UL>
 
-<P><STRONG><a name="[c3]"></a>receive_data_control</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, usbreceive.o(i.receive_data_control))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = receive_data_control &rArr; delay_ms &rArr; delay_us
+<P><STRONG><a name="[c3]"></a>receive_data_control</STRONG> (Thumb, 108 bytes, Stack size 32 bytes, usbreceive.o(i.receive_data_control))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = receive_data_control
 </UL>
-<BR>[Calls]<UL><LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uint_to_float
+<BR>[Calls]<UL><LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uint_to_float
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Receive_HS
 </UL>

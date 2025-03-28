@@ -23,9 +23,8 @@ void receive_data_control(uint16_t *received_number, motor_t *motor){
 		if (target_q[i] >= motor_lower_limit[i] && target_q[i] <= motor_higher_limit[i]){
 		
 			motor[i].ctrl.pos_set = target_q[i];
-			delay_us(10);
+//			delay_us(100);
 		}
 	}
-	delay_ms(5);
 }
 

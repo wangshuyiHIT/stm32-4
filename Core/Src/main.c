@@ -81,14 +81,43 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //		delay_us(200);
 		dm4310_ctrl_send(&hfdcan1, &motor[Motor2]);
 		dm4310_ctrl_send(&hfdcan2, &motor[Motor8]);
+//		delay_us(200);
 		dm4310_ctrl_send(&hfdcan1, &motor[Motor3]);
 		dm4310_ctrl_send(&hfdcan2, &motor[Motor9]);
+//		delay_us(200);
 		dm4310_ctrl_send(&hfdcan1, &motor[Motor4]);
 		dm4310_ctrl_send(&hfdcan2, &motor[MotorA]);
+//		delay_us(200);
 		dm4310_ctrl_send(&hfdcan1, &motor[Motor5]);
 		dm4310_ctrl_send(&hfdcan2, &motor[MotorB]);
+//		delay_us(200);
 		dm4310_ctrl_send(&hfdcan1, &motor[Motor6]);
 		dm4310_ctrl_send(&hfdcan2, &motor[MotorC]);
+		///////////////////////////////////////////
+//		dm4310_ctrl_send(&hfdcan2, &motor[Motor8]);
+//		dm4310_ctrl_send(&hfdcan1, &motor[Motor2]);
+//		
+////		delay_us(200);
+//		dm4310_ctrl_send(&hfdcan2, &motor[MotorA]);
+//		dm4310_ctrl_send(&hfdcan1, &motor[Motor4]);
+//		
+////		delay_us(200);
+//		dm4310_ctrl_send(&hfdcan2, &motor[MotorB]);
+//		dm4310_ctrl_send(&hfdcan1, &motor[Motor5]);
+//		
+////		delay_us(200);
+//		dm4310_ctrl_send(&hfdcan2, &motor[MotorC]);
+//		dm4310_ctrl_send(&hfdcan1, &motor[Motor6]);
+//		
+////		delay_us(200);
+//		dm4310_ctrl_send(&hfdcan2, &motor[Motor7]);
+//		dm4310_ctrl_send(&hfdcan1, &motor[Motor1]);
+//		
+////		delay_us(200);
+//		dm4310_ctrl_send(&hfdcan2, &motor[Motor9]);
+//		dm4310_ctrl_send(&hfdcan1, &motor[Motor3]);
+		
+//		delay_us(200);
 	}
 }
 /* USER CODE END 0 */
@@ -160,19 +189,19 @@ int main(void)
 	motor[MotorC].ctrl.kp_set = 0.0f;motor[MotorC].ctrl.pos_set = 0.0f;delay_us(200);
 
 	for(int m = 1; m <= 100; m++){
-		motor[Motor1].ctrl.kp_set = 1.5f * m;motor[Motor2].ctrl.kp_set = 0.75f * m;
-		motor[Motor7].ctrl.kp_set = 1.5f * m;motor[Motor8].ctrl.kp_set = 0.75f * m;
-		motor[Motor3].ctrl.kp_set = 1.5f * m;motor[Motor4].ctrl.kp_set = 0.75f * m;
-		motor[Motor9].ctrl.kp_set = 1.5f * m;motor[MotorA].ctrl.kp_set = 0.75f * m;
-		motor[Motor5].ctrl.kp_set = 0.75f * m;motor[Motor6].ctrl.kp_set = 0.75f * m;
-		motor[MotorB].ctrl.kp_set = 0.75f * m;motor[MotorC].ctrl.kp_set = 0.75f * m;delay_ms(8);
+		motor[Motor1].ctrl.kp_set = 1.5f * m;motor[Motor2].ctrl.kp_set = 1.5f * m;
+		motor[Motor7].ctrl.kp_set = 1.5f * m;motor[Motor8].ctrl.kp_set = 1.5f * m;
+		motor[Motor3].ctrl.kp_set = 1.5f * m;motor[Motor4].ctrl.kp_set = 1.0f * m;
+		motor[Motor9].ctrl.kp_set = 1.5f * m;motor[MotorA].ctrl.kp_set = 1.0f * m;
+		motor[Motor5].ctrl.kp_set = 0.75f * m;motor[Motor6].ctrl.kp_set = 0.5f * m;
+		motor[MotorB].ctrl.kp_set = 0.75f * m;motor[MotorC].ctrl.kp_set = 0.5f * m;delay_ms(8);
 	}
-		motor[Motor1].ctrl.kp_set = 150.0f;motor[Motor2].ctrl.kp_set = 75.0f;
-		motor[Motor7].ctrl.kp_set = 150.0f;motor[Motor8].ctrl.kp_set = 75.0f;delay_us(200);
-		motor[Motor3].ctrl.kp_set = 150.0f;motor[Motor4].ctrl.kp_set = 75.0f;delay_us(200);
-		motor[Motor9].ctrl.kp_set = 150.0f;motor[MotorA].ctrl.kp_set = 75.0f;delay_us(200);
-		motor[Motor5].ctrl.kp_set = 75.0f;motor[Motor6].ctrl.kp_set = 75.0f;delay_us(200);
-		motor[MotorB].ctrl.kp_set = 75.0f;motor[MotorC].ctrl.kp_set = 75.0f;delay_us(2000);
+		motor[Motor1].ctrl.kp_set = 150.0f;motor[Motor2].ctrl.kp_set = 150.0;delay_us(200);
+		motor[Motor7].ctrl.kp_set = 150.0f;motor[Motor8].ctrl.kp_set = 150.0;delay_us(200);
+		motor[Motor3].ctrl.kp_set = 150.0f;motor[Motor4].ctrl.kp_set = 100.0f;delay_us(200);
+		motor[Motor9].ctrl.kp_set = 150.0f;motor[MotorA].ctrl.kp_set = 100.0f;delay_us(200);
+		motor[Motor5].ctrl.kp_set = 75.0f;motor[Motor6].ctrl.kp_set = 50.0f;delay_us(200);
+		motor[MotorB].ctrl.kp_set = 75.0f;motor[MotorC].ctrl.kp_set = 50.0f;delay_us(2000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -182,9 +211,9 @@ int main(void)
     /* USER CODE END WHILE */
 	
 	  send_data(motor);
-	  delay_us(200);
+//	  delay_us(200);
 	  CDC_Receive_HS(receive_data_buffer, &Len);
-	  delay_us(200);
+//	  delay_us(200);
 //      uint8_t buffer[sizeof(int16_t)];
 //	  memcpy(buffer, &motor[0].para.p_int, sizeof(int16_t));
 //      CDC_Transmit_HS(buffer, sizeof(int16_t));

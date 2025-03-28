@@ -33,12 +33,12 @@ void dm4310_motor_init(void)
 	motor[Motor1].id = 0x01;
 	motor[Motor1].ctrl.mode = 0;		// 0: MIT模式   1: 位置速度模式   2: 速度模式
 	motor[Motor1].ctrl.vel_set = 0.0f;
-	motor[Motor1].ctrl.kd_set = 2.0f;
+	motor[Motor1].ctrl.kd_set = 4.0f;
 	
 	motor[Motor2].id = 0x02;
 	motor[Motor2].ctrl.mode = 0;		// 0: MIT模式   1: 位置速度模式   2: 速度模式
 	motor[Motor2].ctrl.vel_set = 0.0f;
-	motor[Motor2].ctrl.kd_set = 2.0f;
+	motor[Motor2].ctrl.kd_set = 3.0f;
 	
 	motor[Motor3].id = 0x03;
 	motor[Motor3].ctrl.mode = 0;		// 0: MIT模式   1: 位置速度模式   2: 速度模式
@@ -48,7 +48,7 @@ void dm4310_motor_init(void)
 	motor[Motor4].id = 0x04;
 	motor[Motor4].ctrl.mode = 0;		// 0: MIT模式   1: 位置速度模式   2: 速度模式
 	motor[Motor4].ctrl.vel_set = 0.0f;
-	motor[Motor4].ctrl.kd_set = 2.0f;
+	motor[Motor4].ctrl.kd_set = 3.0f;
 	
 	motor[Motor5].id = 0x05;
 	motor[Motor5].ctrl.mode = 0;		// 0: MIT模式   1: 位置速度模式   2: 速度模式
@@ -64,12 +64,12 @@ void dm4310_motor_init(void)
 	motor[Motor7].id = 0x07;
 	motor[Motor7].ctrl.mode = 0;		// 0: MIT模式   1: 位置速度模式   2: 速度模式
 	motor[Motor7].ctrl.vel_set = 0.0f;
-	motor[Motor7].ctrl.kd_set = 2.0f;
+	motor[Motor7].ctrl.kd_set = 4.0f;
 	
 	motor[Motor8].id = 0x08;
 	motor[Motor8].ctrl.mode = 0;		// 0: MIT模式   1: 位置速度模式   2: 速度模式
 	motor[Motor8].ctrl.vel_set = 0.0f;
-	motor[Motor8].ctrl.kd_set = 2.0f;
+	motor[Motor8].ctrl.kd_set = 3.0f;
 	
 	motor[Motor9].id = 0x09;
 	motor[Motor9].ctrl.mode = 0;		// 0: MIT模式   1: 位置速度模式   2: 速度模式
@@ -79,7 +79,7 @@ void dm4310_motor_init(void)
 	motor[MotorA].id = 0x0A;
 	motor[MotorA].ctrl.mode = 0;		// 0: MIT模式   1: 位置速度模式   2: 速度模式
 	motor[MotorA].ctrl.vel_set = 0.0f;
-	motor[MotorA].ctrl.kd_set = 2.0f;
+	motor[MotorA].ctrl.kd_set = 3.0f;
 	
 	motor[MotorB].id = 0x0B;
 	motor[MotorB].ctrl.mode = 0;		// 0: MIT模式   1: 位置速度模式   2: 速度模式
